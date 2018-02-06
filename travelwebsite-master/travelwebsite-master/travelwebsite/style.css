@@ -490,7 +490,7 @@ table {
 
 .button {
   padding: 5px 30px;
-  background-color: #27ae60;
+  background-color: #19bdce;
   border: none;
   border-radius: 5px;
   color: white;
@@ -2472,48 +2472,53 @@ figure img {
   }
 }
 
-#photos {
-  opacity: .88;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#photos img {
-  width: 30%;
+.gallery {
+  width: 640px;
+  margin: 0 auto;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+
+.gallery > div {
+  position: relative;
   float: left;
+  padding: 5px;
+}
+
+.gallery > div > img {
   display: block;
-  margin: 5px;
+  width: 200px;
+  transition: .1s transform;
+  transform: translateZ(0); /* hack */
 }
 
-ul {
-  list-style: none;
-  margin: 0px auto;
-  padding: 10px;
-  display: block;
-  text-align: center;
+.gallery > div:hover {
+  z-index: 1;
 }
 
-#overlay {
-  background: rgba(0,0,0, .8);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-  text-align: center;
+.gallery > div:hover > img {
+  transform: scale(1.7,1.7);
+  transition: .3s transform;
 }
 
-#overlay img {
-  margin: 10% auto 0;
-  width: 550px;
-  border-radius: 5px;
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
 }
 
-#photos {
-  width: 100%;
-}
-
-#photo-gallery {
-  width: 100%;
+.cf:after {
+  clear: both;
 }
 
 
